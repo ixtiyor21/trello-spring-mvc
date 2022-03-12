@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragment.html :: head('Project')"></head>
+<body>
+<header>
+    <main th:include="fragment.html :: menu-bar"></main>
+    <aside>
+        <nav th:include="fragment.html :: nav-bar"></nav>
+        <div class="pxy-5">
+            <h1 class="font-size-35 margin-bottom-20">Organization “<span th:text="${organization.name}"></span>”</h1>
+            <div class="clm-1 display-flex padding-20">
+                <div>
+                            <span class="display-flex margin-bottom-10">
+                                <p class="color-black">Email:</p>
+                                <p class="margin-left-20" th:text="${organization.email}"></p>
+                            </span>
+                    <span class="display-flex">
+                                <p class="color-black">CreatedAt:</p>
+                                <p class="margin-left-20" th:text="${organization.created_at}"></p>
+                            </span>
+                </div>
+                <div class="margin-left-40">
+                            <span class="display-flex margin-bottom-10">
+                                <p class="color-black">Status:</p>
+                                <p class="margin-left-20">Active</p>
+                            </span>
+                    <span class="display-flex">
+                                <p class="color-black">CreatedBy:</p>
+                                <p class="margin-left-20" th:text="${organization.created_by}"></p>
+                            </span>
+                </div>
+            </div>
+            <a th:if="${#authentication.principal.role_code.equals('ADMIN')}" th:href="@{/project/create}" class="btn btn-success margin-top-10">Create</a>
+            <div class="content">
+                <div class="contents">
+                    <div class="content-text" style="margin-bottom: 20px">
+                        <p>Projects</p>
+                        <p>Export</p>
+                    </div>
+                    <div th:if="${#authentication.principal.role_code.equals('ADMIN')}" th:each="project : ${projects}">
+                        <a th:href="@{/project/detail/{id}(id=${project.id})}"
+                           style="text-decoration: none">
+                            <div class="box">
+                                <p th:text="${project.name}"></p>
+                                <div class="box-text">
+                                    <!--                            <span style="color: gray" th:text="${#strings.abbreviate(project.description, 50)}">-->
+                                    </span>
+                                    <span>
+                                        <img th:src="@{/images/sunrise.png}" alt="">
+                                        <span th:text="${project.created_at}"></span>
+                                    </span>
+                                    <span>
+                                       <img th:src="@{/images/users.png}" alt="">
+                                        <span th:text="${project.created_by}"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div th:unless="${#authentication.principal.role_code.equals('ADMIN')}" th:each="project : ${projects}">
+                        <div th:if="${projects.size() != 0}">
+                            <a th:href="@{/board/project/{id}(id=${project.id})}"
+                               style="text-decoration: none">
+                                <div class="box">
+                                    <p th:text="${project.name}"></p>
+                                    <div class="box-text">
+                                    <span>
+                                        <img th:src="@{/images/sunrise.png}" alt="">
+                                        <span th:text="${project.created_at}"></span>
+                                    </span>
+                                        <span>
+                                       <img th:src="@{/images/users.png}" alt="">
+                                        <span th:text="${project.created_by}"></span>
+                                    </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div th:unless="${projects.size() != 0}">
+                            <div class="box">
+                                <h1>You dont have any projects</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</header>
+</body>
+</html>

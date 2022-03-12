@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/simple_todo?currentSchema=etm</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">123</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.org.Organization"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.role.Role"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.auth.AuthUser"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.project.Project"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.project.ProjectColumn"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.project.ProjectMember"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.task.Task"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.task.TaskMember"/>
+        <mapping class="uz.ixtiyor21.trello_magic.entity.task.TaskComment"/>
+
+    </session-factory>
+</hibernate-configuration>

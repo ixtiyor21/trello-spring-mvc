@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragment.html :: head('User')"></head>
+<body>
+<header>
+    <main th:include="fragment.html :: menu-bar"></main>
+    <aside>
+        <nav th:include="fragment.html :: nav-bar"></nav>
+        <div class="container">
+            <a th:href="@{/user/create}" class="btn-create">Create</a>
+            <div class="content">
+                <div class="contents">
+                    <div class="content-text" style="margin-bottom: 20px">
+                        <p>All Users</p>
+                        <p>Export</p>
+                    </div>
+                    <div th:each="user : ${users}">
+                        <a th:href="@{/user/detail/{id}(id=${user.id})}" style="text-decoration: none">
+                            <div class="box">
+                                <p th:text="${user.username}"></p>
+                                <div class="box-text">
+                                    <span>
+                                        <span th:text="${user.email}"></span>
+                                    </span>
+                                    <span>
+                                        <img th:src="@{/images/sunrise.png}" alt="">
+                                        <span th:text="${user.firstName}"></span>
+                                    </span>
+                                    <span>
+                                       <img th:src="@{/images/users.png}" alt="">
+                                        <span th:text="${user.created_by}"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</header>
+</body>
+</html>

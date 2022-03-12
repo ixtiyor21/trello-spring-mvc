@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragment.html :: head('Home')"></head>
+<body>
+<header>
+    <main th:include="fragment.html :: menu-bar"></main>
+    <aside>
+        <nav th:include="fragment.html :: nav-bar"></nav>
+        <div class="container">
+            <a th:href="@{/organization/create}" class="btn-create">Create</a>
+            <div class="content">
+                <div class="contents">
+                    <div class="content-text" style="margin-bottom: 20px">
+                        <p>Organizations</p>
+                        <p>Export</p>
+                    </div>
+                    <div th:each="organization : ${organizations}">
+                        <a th:href="@{/organization/{name}(name=${organization.name})}" style="text-decoration: none">
+                            <div class="box">
+                                <p th:text="${organization.name}"></p>
+                                <div class="box-text">
+                                    <!--                            <span style="color: gray" th:text="${#strings.abbreviate(organization.description, 50)}">-->
+                                    </span>
+                                    <span>
+                                        <img th:src="@{/images/sunrise.png}" alt="">
+                                        <span th:text="${organization.created_at}"></span>
+                                    </span>
+                                    <span>
+                                       <img th:src="@{/images/users.png}" alt="">
+                                        <span th:text="${organization.created_by}"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</header>
+</body>
+</html>

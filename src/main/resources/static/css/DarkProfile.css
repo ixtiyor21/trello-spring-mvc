@@ -1,0 +1,42 @@
+.col-lg-6-polm {
+    width: 660px;
+}
+
+.image-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.image-profile-2 {
+    width: 300px;
+    height: 300px;
+}
+
+.mb-20 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.pb-20 {
+    padding-top: 20px;
+}
+
+.color-background-profile {
+    /*background: #0c0e14;*/
+    height: 100vh;
+}
+
+.style-input {
+    /*background: #010409;*/
+    /*border-color: #30363d;*/
+    /*color: #c9d1d9;*/
+}
+
+.style-label {
+    /*color: #c9d1d9;*/
+}
+
+.width-300 {
+    width: 300px;
+}

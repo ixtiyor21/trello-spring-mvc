@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="@{/css/index3.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Red+Hat+Display&family=Rubik:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<style>
+    .status-text {
+        gap: 10px !important;
+    }
+
+    .status {
+        padding: 15px 22px 22px 22px;
+    }
+
+    .button-style {
+        margin-bottom: 10px;
+        height: 40px;
+        width: 100%;
+        text-decoration: none;
+        padding: 0 9px;
+        border-radius: 14px;
+        border: none;
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        background: #67cb65;
+    }
+
+    .button-style-color {
+        margin-bottom: 10px;
+        height: 40px;
+        width: 100%;
+        text-decoration: none;
+        padding: 0 9px;
+        border-radius: 14px;
+        border: none;
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .button-style-blue {
+        margin-bottom: 10px;
+        height: 40px;
+        width: 100%;
+        text-decoration: none;
+        padding: 0 9px;
+        border-radius: 14px;
+        border: none;
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        background: #65cbc2;
+    }
+
+    .medium {
+        background: #ff9533;
+    }
+
+    .low {
+        background: #67cb65;
+    }
+
+    .high {
+        background: #e74444;
+    }
+
+    .high-color {
+        background: #e74444;
+    }
+
+
+</style>
+
+<body>
+<header>
+    <main th:include="fragment.html :: menu-bar"></main>
+    <aside>
+        <nav th:include="fragment.html :: nav-bar"></nav>
+        <div class="pxy-30">
+            <h2>Task : <span th:text="${task.name}"></span></h2>
+
+            <div class="contents">
+                <div class="content-actions">
+                    <h5>Actions</h5>
+                    <div class="actions-box">
+                        <h6>CRM system design</h6>
+                        <p><b>Activity: </b>12/04/2021, 6:37 p.m </p>
+                        <p>Приступил(-а) к задаче</p>
+                        <span>
+                                <img src="./assets/imges/Ellipse.png" alt="">Azhar
+                            </span>
+                    </div>
+
+                    <div class="actions-box">
+                        <h6>CRM system design</h6>
+                        <p><b>Activity: </b>12/04/2021, 6:37 p.m </p>
+                        <p>Приступил(-а) к задаче</p>
+                        <span>
+                                <img src="./assets/imges/Ellipse.png" alt="">Azhar
+                            </span>
+                    </div>
+
+                    <div class="actions-box">
+                        <h6>CRM system design</h6>
+                        <p><b>Activity: </b>12/04/2021, 6:37 p.m </p>
+                        <p>Приступил(-а) к задаче</p>
+                        <span>
+                                <img src="./assets/imges/Ellipse.png" alt="">Azhar
+                            </span>
+                    </div>
+
+                    <div class="actions-box">
+                        <h6>CRM system design</h6>
+                        <p><b>Activity: </b>12/04/2021, 6:37 p.m </p>
+                        <p>Приступил(-а) к задаче</p>
+                        <span>
+                                <img src="./assets/imges/Ellipse.png" alt="">Azhar
+                            </span>
+                    </div>
+
+                    <div class="actions-box">
+                        <h6>CRM system design</h6>
+                        <p><b>Activity: </b>12/04/2021, 6:37 p.m </p>
+                        <p>Приступил(-а) к задаче</p>
+                        <span>
+                                <img src="./assets/imges/Ellipse.png" alt="">Azhar
+                            </span>
+                    </div>
+                </div>
+                <div class="container-box">
+                    <div class="content-box">
+                        <p th:text="${task.description }"></p>
+                    </div>
+                    <div class="content-box" style="height: 210px !important;">
+                        <textarea placeholder="Комментарий..." id="" cols="10" rows="3"
+                                  style="border-color: snow"></textarea>
+                        <button type="submit" style="margin-top: 10px;">Опубликовать</button>
+                    </div>
+
+                    <div class="content-box">
+                        <div class="flex">
+                            <p class="box-text"><img src="./assets/imges/avatar.png" alt="">Artur </p>
+                            <p>12/04/2021, 6:37 p.m</p>
+                        </div>
+
+                        <span>1. Добавлены шаблонные теги для подсчёта часов, потраченных на закрытые задачи.</span>
+                    </div>
+                </div>
+                <div class="content-status">
+                    <div class="status">
+                        <div class="status-text">
+                            <p>Priority:</p>
+                            <div th:switch="${task.level}">
+                                <button th:case="'LOW'" class="low">Low</button>
+                                <button th:case="'MEDIUM'" class="medium">Medium</button>
+                                <button th:case="'HIGH'" class="high">High</button>
+                            </div>
+                        </div>
+
+                        <div class="status-text">
+                            <p>Status:</p>
+                            <span th:text="${task.projectColumn.name}"></span>
+                        </div>
+
+                        <div class="status-text">
+                            <p>Date Added:</p>
+                            <span th:text="${task.created_at}"></span>
+                        </div>
+
+                        <div class="status-text">
+                            <p>Created By:</p>
+                            <span th:text="${task.created_by}"></span>
+                        </div>
+
+                        <div class="status-text">
+                            <p>Practicipants:</p>
+                            <span>Adyl, Azhar, Arthur</span>
+                        </div>
+                    </div>
+
+                    <div class="btn" style="width: 100%">
+                        <div th:if="${task.closed}">
+                            <button type="submit">Open Task</button>
+                            <button type="button" class="button-style high-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Delete Task
+                            </button>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Delete Task</h5>
+<!--                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure delete task ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <a th:href="@{/task/delete/{id}(id=${task.id})}" class="btn btn-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div th:unless="${task.closed}">
+                            <button type="submit" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                                    aria-expanded="false" aria-controls="collapseExample1">Change the priority
+                                <img th:src="@{/images/down.png}" alt="">
+                            </button>
+                            <div class="collapse" id="collapseExample1">
+                                <form th:action="@{/task/level/change}">
+                                    <input th:value="${task.id}" name="task_id" style="display: none">
+                                    <input th:value="LOW" name="level" style="display: none">
+                                    <input type="submit" th:value="LOW" class="button-style low">
+                                </form>
+                                <form th:action="@{/task/level/change}">
+                                    <input th:value="${task.id}" name="task_id" style="display: none">
+                                    <input th:value="MEDIUM" name="level" style="display: none">
+                                    <input type="submit" th:value="MEDIUM" class="button-style medium">
+                                </form>
+                                <form th:action="@{/task/level/change}">
+                                    <input th:value="${task.id}" name="task_id" style="display: none">
+                                    <input th:value="HIGH" name="level" style="display: none">
+                                    <input type="submit" th:value="HIGH" class="button-style high">
+                                </form>
+                            </div>
+
+                            <button type="submit" class="button-style-blue" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample"
+                                    aria-expanded="false" aria-controls="collapseExample">Change the Status
+                                <img th:src="@{/images/down.png}" alt="">
+                            </button>
+                            <div class="collapse" id="collapseExample">
+                                <div th:each="column : ${columns}">
+                                    <form th:action="@{/task/status/change}">
+                                        <input th:value="${task.id}" name="task_id" style="display: none">
+                                        <input th:value="${column.id}" name="column_id" style="display: none">
+                                        <input type="submit" th:value="${column.name}" class="button-style">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <button type="submit">
+                                <img th:src="@{/images/usercheck.png}" alt="">Become a participant
+                            </button>
+
+                            <button type="submit">
+                                <img th:src="@{/images/ion_snow.png}" alt="">Freeze the task
+                            </button>
+
+                            <a th:href="@{/task/closed/change/{id}(id=${task.id})}">
+                                <div class="button-style-color high-color" style="padding-top: 7px;">
+                                    <img th:src="@{/images/check.png}" alt="">
+                                    <span style="text-decoration: none; color: white">Close task</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <section th:include="fragment.html :: js-section"></section>
+</header>
+</body>
+</html>
