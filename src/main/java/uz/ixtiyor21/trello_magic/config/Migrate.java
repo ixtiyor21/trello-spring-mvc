@@ -23,9 +23,9 @@
             transaction.begin();
 
             Organization organization = new Organization();
-            organization.setName("ST2EMX");
+            organization.setName("PdpAcademy");
             organization.setCode(String.valueOf(System.currentTimeMillis()));
-            organization.setEmail("fcgvhj@gmail.com");
+            organization.setEmail("pdp@gmail.com");
             organization.setDescription("lorem bfhdsdbf ");
             organization.setStatus(String.valueOf(Status.ACTIVE));
             organization.setCreated_at(Instant.now());
@@ -40,14 +40,14 @@
             session.save(role);
 
             AuthUser authUser = new AuthUser();
-            authUser.setFirstName("Akbar");
-            authUser.setLastName("Akbaraov");
+            authUser.setFirstName("Ixtiyor");
+            authUser.setLastName("Qozoqboyev");
             authUser.setIs_SuperUser(false);
-            authUser.setEmail("akbarov546@gmail.com");
-            authUser.setLang("RU");
+            authUser.setEmail("ixtiyorqozoqboyev@gmail.com");
+            authUser.setLang("EN");
             authUser.setPassword(new PasswordEncoderConfigurer().passwordEncoder().encode("123"));
             authUser.setCode(String.valueOf(System.currentTimeMillis()));
-            authUser.setUsername("akbarov");
+            authUser.setUsername("ixtiyor21");
             authUser.setCreated_at(Instant.now());
             authUser.setCreated_by(-1L);
             session.save(authUser);
